@@ -75,8 +75,6 @@
   </tr>
 </table>
 
-> Place your screenshots in `assets/screenshots/` with the filenames above.
-
 ---
 
 ## Installation
