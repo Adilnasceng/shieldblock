@@ -9,6 +9,7 @@
     if (!settings) return;
     if (!settings.enabled) return;
     if (!settings.categories || !settings.categories.antiAdblock) return;
+    if (settings.whitelist && settings.whitelist.includes(location.hostname)) return;
 
     injectBaitElement();
     spoofAdGlobals();

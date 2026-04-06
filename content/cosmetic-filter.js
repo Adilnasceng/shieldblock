@@ -5,11 +5,32 @@
 (function () {
   'use strict';
 
+  // Built-in exclusions — Google apps and other sensitive domains
+  // where broad CSS selectors cause false positives
+  const COSMETIC_EXCLUSIONS = [
+    'mail.google.com',
+    'docs.google.com',
+    'drive.google.com',
+    'sheets.google.com',
+    'slides.google.com',
+    'calendar.google.com',
+    'meet.google.com',
+    'chat.google.com',
+    'classroom.google.com',
+    'outlook.live.com',
+    'outlook.office.com',
+    'notion.so',
+    'linear.app',
+    'figma.com',
+  ];
+
   // Read settings from storage before doing anything
   chrome.storage.local.get('settings', ({ settings }) => {
     if (!settings) return;
     if (!settings.enabled) return;
     if (!settings.categories || !settings.categories.ads) return;
+    if (settings.whitelist && settings.whitelist.includes(location.hostname)) return;
+    if (COSMETIC_EXCLUSIONS.includes(location.hostname)) return;
 
     injectStyles();
     startObserver();
@@ -29,11 +50,8 @@
     '[id^="google_ads_frame"]',
     '[class*="googletag"]',
     '[id*="googletag"]',
-    '[data-google-query-id]',
 
     // Generic ad classes/IDs
-    '.ad',
-    '.ads',
     '.ad-banner',
     '.ad-container',
     '.ad-wrapper',
@@ -62,8 +80,6 @@
     '.bottom-ad',
     '.header-ad',
     '.footer-ad',
-    '#ad',
-    '#ads',
     '#ad-wrapper',
     '#ad-container',
     '#ad-banner',
@@ -72,12 +88,7 @@
     '#advertisement',
     '#advertisements',
 
-    // Attribute pattern matches (costly but necessary)
-    '[class*="-ad-"]',
-    '[class*="_ad_"]',
-    '[id*="-ad-"]',
-    '[id*="_ad_"]',
-    '[class*="Ads"]',
+    // Attribute pattern matches
     '[class*="AdUnit"]',
     '[class*="AdSlot"]',
     '[class*="AdBanner"]',

@@ -11,6 +11,7 @@
     if (!settings) return;
     if (!settings.enabled) return;
     if (!settings.categories || !settings.categories.cookieBanners) return;
+    if (settings.whitelist && settings.whitelist.includes(location.hostname)) return;
 
     // Start detection after a brief moment to let the page render
     if (document.readyState === 'loading') {

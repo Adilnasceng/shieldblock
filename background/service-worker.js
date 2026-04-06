@@ -102,7 +102,7 @@ async function syncDynamicRules(settings) {
       priority: 2,
       action: { type: 'allow' },
       condition: {
-        requestDomains: [domain],
+        initiatorDomains: [domain],
         resourceTypes: ['main_frame','sub_frame','script','image','xmlhttprequest',
                         'media','ping','other','websocket','font','stylesheet'],
       },
