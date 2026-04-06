@@ -1,0 +1,142 @@
+{
+  "extensionName": {
+    "message": "ShieldBlock",
+    "description": "Extension name"
+  },
+  "extensionShortName": {
+    "message": "ShieldBlock",
+    "description": "Short name shown in toolbar"
+  },
+  "extensionDescription": {
+    "message": "Advanced ad blocker with cookie banner removal, anti-adblock bypass, and tracker blocking. Fast, private, and self-contained.",
+    "description": "Extension description shown in Chrome Web Store"
+  },
+  "protectionActive": {
+    "message": "Protection Active",
+    "description": "Label when extension is enabled"
+  },
+  "protectionPaused": {
+    "message": "Protection Paused",
+    "description": "Label when extension is disabled"
+  },
+  "pauseHere": {
+    "message": "Pause Here",
+    "description": "Button to whitelist current site"
+  },
+  "resumeHere": {
+    "message": "Resume Here",
+    "description": "Button to remove current site from whitelist"
+  },
+  "adsBlocked": {
+    "message": "Ads Blocked",
+    "description": "Stat label for blocked ads"
+  },
+  "trackersBlocked": {
+    "message": "Trackers Blocked",
+    "description": "Stat label for blocked trackers"
+  },
+  "cookieBannersRemoved": {
+    "message": "Cookie Banners Removed",
+    "description": "Stat label for removed cookie banners"
+  },
+  "session": {
+    "message": "Session",
+    "description": "Column header for session stats"
+  },
+  "allTime": {
+    "message": "All-Time",
+    "description": "Column header for all-time stats"
+  },
+  "settingsAndRules": {
+    "message": "Settings & Custom Rules →",
+    "description": "Link to settings page in popup footer"
+  },
+  "generalSettings": {
+    "message": "General Settings",
+    "description": "Settings section title"
+  },
+  "appearance": {
+    "message": "Appearance",
+    "description": "Settings card title"
+  },
+  "darkMode": {
+    "message": "Dark Mode",
+    "description": "Toggle label"
+  },
+  "darkModeDesc": {
+    "message": "Use dark color scheme across the extension",
+    "description": "Toggle description"
+  },
+  "language": {
+    "message": "Language",
+    "description": "Language setting label"
+  },
+  "blockAds": {
+    "message": "Block Ads",
+    "description": "Category toggle label"
+  },
+  "blockTrackers": {
+    "message": "Block Trackers",
+    "description": "Category toggle label"
+  },
+  "blockMiners": {
+    "message": "Block Crypto Miners",
+    "description": "Category toggle label"
+  },
+  "removeCookieBanners": {
+    "message": "Remove Cookie Banners",
+    "description": "Category toggle label"
+  },
+  "antiAdblockBypass": {
+    "message": "Anti-Adblock Bypass",
+    "description": "Category toggle label"
+  },
+  "whitelist": {
+    "message": "Whitelist",
+    "description": "Whitelist section title"
+  },
+  "whitelistDesc": {
+    "message": "Domains on the whitelist will not have ads blocked or scripts injected.",
+    "description": "Whitelist section description"
+  },
+  "addDomain": {
+    "message": "Add Domain",
+    "description": "Button label"
+  },
+  "customRules": {
+    "message": "Custom Filter Rules",
+    "description": "Section title"
+  },
+  "saveRules": {
+    "message": "Save Rules",
+    "description": "Button label"
+  },
+  "saved": {
+    "message": "✓ Saved",
+    "description": "Confirmation message"
+  },
+  "exportSettings": {
+    "message": "Export Settings",
+    "description": "Button label"
+  },
+  "importSettings": {
+    "message": "Import Settings",
+    "description": "Button label"
+  },
+  "resetStats": {
+    "message": "Reset All Statistics",
+    "description": "Button label"
+  },
+  "resetAll": {
+    "message": "Reset Everything",
+    "description": "Button label"
+  },
+  "confirmResetStats": {
+    "message": "Reset all statistics?",
+    "description": "Confirmation dialog text"
+  },
+  "confirmResetAll": {
+    "message": "Reset all settings and statistics? This cannot be undone.",
+    "description": "Confirmation dialog text"
+  }
+}

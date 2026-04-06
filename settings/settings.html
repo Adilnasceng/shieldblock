@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShieldBlock — Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body class="dark">
+
+  <div class="page">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <svg class="logo" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z" fill="currentColor" opacity="0.9"/>
+          <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">ShieldBlock</span>
+      </div>
+      <ul class="nav-list">
+        <li><a class="nav-link active" data-section="general" href="#" data-i18n="navGeneral">General</a></li>
+        <li><a class="nav-link" data-section="whitelist" href="#" data-i18n="navWhitelist">Whitelist</a></li>
+        <li><a class="nav-link" data-section="custom-rules" href="#" data-i18n="navCustomRules">Custom Rules</a></li>
+        <li><a class="nav-link" data-section="import-export" href="#" data-i18n="navImportExport">Import / Export</a></li>
+        <li><a class="nav-link" data-section="about" href="#" data-i18n="navAbout">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <!-- ── General ─────────────────────────────────────────── -->
+      <section class="section active" id="section-general">
+        <h2 class="section-title" data-i18n="generalSettings">General Settings</h2>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="appearance">Appearance</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="darkMode">Dark Mode</span>
+              <span class="setting-desc" data-i18n="darkModeDesc">Use dark color scheme across the extension</span>
+            </div>
+            <button class="toggle-switch" id="toggle-dark" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="language">Language</span>
+            </div>
+            <select class="select" id="select-language">
+              <option value="en">English</option>
+              <option value="tr">Türkçe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="protectionCats">Protection Categories</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="blockAds">Block Ads</span>
+              <span class="setting-desc" data-i18n="blockAdsDesc">Display, video, and native advertisements</span>
+            </div>
+            <button class="toggle-switch" id="toggle-ads" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="blockTrackers">Block Trackers</span>
+              <span class="setting-desc" data-i18n="blockTrackersDesc">Analytics scripts, pixels, and fingerprinters</span>
+            </div>
+            <button class="toggle-switch" id="toggle-trackers" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="blockMiners">Block Crypto Miners</span>
+              <span class="setting-desc" data-i18n="blockMinersDesc">In-browser cryptocurrency mining scripts</span>
+            </div>
+            <button class="toggle-switch" id="toggle-miners" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="removeBanners">Remove Cookie Banners</span>
+              <span class="setting-desc" data-i18n="removeBannersDesc">Auto-dismiss GDPR/cookie consent popups</span>
+            </div>
+            <button class="toggle-switch" id="toggle-cookies" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label" data-i18n="antiAdblock">Anti-Adblock Bypass</span>
+              <span class="setting-desc" data-i18n="antiAdblockDesc">Neutralize "please disable adblock" messages</span>
+            </div>
+            <button class="toggle-switch" id="toggle-antiblock" role="switch" aria-checked="true">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="statistics">Statistics</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-big" id="gen-stat-ads">0</span>
+              <span class="stat-label" data-i18n="adsBlockedStat">Ads Blocked</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-big" id="gen-stat-trackers">0</span>
+              <span class="stat-label" data-i18n="trackersBlockedStat">Trackers Blocked</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-big" id="gen-stat-cookies">0</span>
+              <span class="stat-label" data-i18n="bannersRemovedStat">Banners Removed</span>
+            </div>
+          </div>
+          <button class="btn btn-danger" id="btn-reset-stats" data-i18n="resetStats">Reset All Statistics</button>
+        </div>
+      </section>
+
+      <!-- ── Whitelist ────────────────────────────────────────── -->
+      <section class="section" id="section-whitelist">
+        <h2 class="section-title" data-i18n="whitelistTitle">Whitelist</h2>
+        <p class="section-desc" data-i18n="whitelistDesc">Domains on the whitelist will not have ads blocked or scripts injected.</p>
+
+        <div class="card">
+          <div class="add-row">
+            <input class="input" type="text" id="whitelist-input" placeholder="example.com"
+                   data-i18n-placeholder="addDomainPlaceholder" autocomplete="off" spellcheck="false">
+            <button class="btn btn-primary" id="btn-add-whitelist" data-i18n="addDomain">Add Domain</button>
+          </div>
+          <ul class="domain-list" id="whitelist-list"></ul>
+          <p class="empty-hint" id="whitelist-empty" data-i18n="noDomainsWhitelisted">No domains whitelisted.</p>
+        </div>
+      </section>
+
+      <!-- ── Custom Rules ─────────────────────────────────────── -->
+      <section class="section" id="section-custom-rules">
+        <h2 class="section-title" data-i18n="customRulesTitle">Custom Filter Rules</h2>
+        <p class="section-desc" data-i18n="customRulesDesc">One rule per line. Use AdBlock-style syntax: ||example.com^ to block, @@||example.com^ to allow.</p>
+
+        <div class="card">
+          <textarea class="textarea" id="custom-rules-input"
+            placeholder="||example.com^&#10;||another-ad-network.net^&#10;@@||allowed-site.com^"
+            rows="12" spellcheck="false"></textarea>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="btn-save-rules" data-i18n="saveRules">Save Rules</button>
+            <span class="save-status" id="rules-save-status"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="ruleFormatTitle">Rule Format Guide</h3>
+          <table class="rule-table">
+            <tr><td><code>||example.com^</code></td><td>Block all requests to example.com</td></tr>
+            <tr><td><code>@@||example.com^</code></td><td>Allow (whitelist) example.com</td></tr>
+            <tr><td><code>||example.com/ads/</code></td><td>Block a specific path</td></tr>
+            <tr><td><code>/banner_ad/</code></td><td>Block URLs containing "banner_ad"</td></tr>
+            <tr><td><code>! comment</code></td><td>Comment line (ignored)</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Import / Export ─────────────────────────────────── -->
+      <section class="section" id="section-import-export">
+        <h2 class="section-title" data-i18n="importExportTitle">Import / Export</h2>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="exportTitle">Export Settings</h3>
+          <p class="setting-desc" data-i18n="exportDesc">Save your current settings, whitelist, and custom rules to a JSON file.</p>
+          <button class="btn btn-primary" id="btn-export" data-i18n="exportBtn">Export Settings</button>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="importTitle">Import Settings</h3>
+          <p class="setting-desc" data-i18n="importDesc">Load settings from a previously exported JSON file. This will overwrite current settings.</p>
+          <div class="file-row">
+            <label class="file-label" for="import-file" data-i18n="chooseFile">Choose File</label>
+            <input type="file" id="import-file" accept=".json" style="display:none">
+            <span class="file-name" id="import-filename" data-i18n="noFileChosen">No file chosen</span>
+          </div>
+          <button class="btn btn-primary" id="btn-import" disabled data-i18n="importBtn">Import Settings</button>
+          <p class="import-status" id="import-status"></p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="resetTitle">Reset to Defaults</h3>
+          <p class="setting-desc" data-i18n="resetDesc">This will clear all settings, whitelist, and custom rules. Statistics will also be reset.</p>
+          <button class="btn btn-danger" id="btn-reset-all" data-i18n="resetAll">Reset Everything</button>
+        </div>
+      </section>
+
+      <!-- ── About ───────────────────────────────────────────── -->
+      <section class="section" id="section-about">
+        <h2 class="section-title" data-i18n="aboutTitle">About ShieldBlock</h2>
+
+        <div class="card about-card">
+          <svg class="about-logo" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z" fill="currentColor"/>
+            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="about-name">ShieldBlock</h3>
+          <p class="about-version">Version 1.0.0</p>
+          <p class="about-desc" data-i18n="aboutDesc">A production-grade, privacy-first ad blocker using Chrome's declarativeNetRequest API. Fully self-contained — no external dependencies or servers.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="featuresTitle">Features</h3>
+          <ul class="feature-list">
+            <li data-i18n="feat1">220+ built-in filter rules (ads, trackers, miners)</li>
+            <li data-i18n="feat2">Cosmetic filtering — hides ad elements that slip through</li>
+            <li data-i18n="feat3">Cookie consent banner auto-removal (50+ frameworks)</li>
+            <li data-i18n="feat4">Anti-adblock bypass — bait elements + overlay removal</li>
+            <li data-i18n="feat5">Per-site whitelist with one click</li>
+            <li data-i18n="feat6">Custom filter rules (AdBlock syntax)</li>
+            <li data-i18n="feat7">Turkish + English UI support</li>
+            <li data-i18n="feat8">Dark / light mode</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="permissionsTitle">Permissions Used</h3>
+          <ul class="permission-list" id="perm-list">
+            <li data-i18n="perm1">declarativeNetRequest — Block network requests via rule engine</li>
+            <li data-i18n="perm2">storage — Save settings and statistics locally</li>
+            <li data-i18n="perm3">tabs / activeTab — Read current tab URL for per-site toggle</li>
+            <li data-i18n="perm4">scripting — Inject cosmetic filter content scripts</li>
+            <li data-i18n="perm5">webNavigation — Detect page navigation for badge reset</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-i18n="authorTitle">Developer</h3>
+          <div class="author-row">
+            <div class="author-avatar">AN</div>
+            <div class="author-info">
+              <span class="author-name" data-i18n="authorName">Adil NAS</span>
+              <span class="author-license" data-i18n="authorLicense">All Rights Reserved.</span>
+            </div>
+          </div>
+          <div class="author-links">
+            <a class="author-link" href="https://github.com/Adilnasceng" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              github.com/Adilnasceng
+            </a>
+            <a class="author-link" href="mailto:adilnasceng@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              adilnasceng@gmail.com
+            </a>
+            <a class="author-link sponsor-link" href="https://github.com/sponsors/Adilnasceng" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <span data-i18n="sponsorBtn">Sponsor this project</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../assets/i18n.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

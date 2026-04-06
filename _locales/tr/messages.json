@@ -1,0 +1,142 @@
+{
+  "extensionName": {
+    "message": "ShieldBlock",
+    "description": "Eklenti adı"
+  },
+  "extensionShortName": {
+    "message": "ShieldBlock",
+    "description": "Araç çubuğunda gösterilen kısa ad"
+  },
+  "extensionDescription": {
+    "message": "Çerez banner kaldırma, reklam engelleyici tespitini atlatma ve izleyici engelleme özelliklerine sahip gelişmiş reklam engelleyici.",
+    "description": "Chrome Web Store'da gösterilen açıklama"
+  },
+  "protectionActive": {
+    "message": "Koruma Aktif",
+    "description": "Eklenti etkin olduğunda etiket"
+  },
+  "protectionPaused": {
+    "message": "Koruma Duraklatıldı",
+    "description": "Eklenti devre dışı olduğunda etiket"
+  },
+  "pauseHere": {
+    "message": "Burada Durdur",
+    "description": "Mevcut siteyi beyaz listeye ekle butonu"
+  },
+  "resumeHere": {
+    "message": "Burada Devam Et",
+    "description": "Mevcut siteyi beyaz listeden çıkar butonu"
+  },
+  "adsBlocked": {
+    "message": "Engellenen Reklam",
+    "description": "Engellenen reklamlar için istatistik etiketi"
+  },
+  "trackersBlocked": {
+    "message": "Engellenen İzleyici",
+    "description": "Engellenen izleyiciler için istatistik etiketi"
+  },
+  "cookieBannersRemoved": {
+    "message": "Kaldırılan Çerez Banner",
+    "description": "Kaldırılan çerez banner'ları için istatistik etiketi"
+  },
+  "session": {
+    "message": "Oturum",
+    "description": "Oturum istatistikleri için sütun başlığı"
+  },
+  "allTime": {
+    "message": "Toplam",
+    "description": "Toplam istatistikler için sütun başlığı"
+  },
+  "settingsAndRules": {
+    "message": "Ayarlar ve Özel Kurallar →",
+    "description": "Popup altbilgisindeki ayarlar sayfası bağlantısı"
+  },
+  "generalSettings": {
+    "message": "Genel Ayarlar",
+    "description": "Ayarlar bölümü başlığı"
+  },
+  "appearance": {
+    "message": "Görünüm",
+    "description": "Ayarlar kart başlığı"
+  },
+  "darkMode": {
+    "message": "Koyu Mod",
+    "description": "Geçiş etiketi"
+  },
+  "darkModeDesc": {
+    "message": "Eklentide koyu renk şeması kullan",
+    "description": "Geçiş açıklaması"
+  },
+  "language": {
+    "message": "Dil",
+    "description": "Dil ayarı etiketi"
+  },
+  "blockAds": {
+    "message": "Reklamları Engelle",
+    "description": "Kategori geçiş etiketi"
+  },
+  "blockTrackers": {
+    "message": "İzleyicileri Engelle",
+    "description": "Kategori geçiş etiketi"
+  },
+  "blockMiners": {
+    "message": "Kripto Madencilerini Engelle",
+    "description": "Kategori geçiş etiketi"
+  },
+  "removeCookieBanners": {
+    "message": "Çerez Banner'ları Kaldır",
+    "description": "Kategori geçiş etiketi"
+  },
+  "antiAdblockBypass": {
+    "message": "Reklam Engelleme Tespitini Atla",
+    "description": "Kategori geçiş etiketi"
+  },
+  "whitelist": {
+    "message": "Beyaz Liste",
+    "description": "Beyaz liste bölümü başlığı"
+  },
+  "whitelistDesc": {
+    "message": "Beyaz listedeki alan adlarında reklam engelleme veya script enjeksiyonu yapılmaz.",
+    "description": "Beyaz liste bölümü açıklaması"
+  },
+  "addDomain": {
+    "message": "Alan Adı Ekle",
+    "description": "Buton etiketi"
+  },
+  "customRules": {
+    "message": "Özel Filtre Kuralları",
+    "description": "Bölüm başlığı"
+  },
+  "saveRules": {
+    "message": "Kuralları Kaydet",
+    "description": "Buton etiketi"
+  },
+  "saved": {
+    "message": "✓ Kaydedildi",
+    "description": "Onay mesajı"
+  },
+  "exportSettings": {
+    "message": "Ayarları Dışa Aktar",
+    "description": "Buton etiketi"
+  },
+  "importSettings": {
+    "message": "Ayarları İçe Aktar",
+    "description": "Buton etiketi"
+  },
+  "resetStats": {
+    "message": "Tüm İstatistikleri Sıfırla",
+    "description": "Buton etiketi"
+  },
+  "resetAll": {
+    "message": "Her Şeyi Sıfırla",
+    "description": "Buton etiketi"
+  },
+  "confirmResetStats": {
+    "message": "Tüm istatistikler sıfırlansın mı?",
+    "description": "Onay iletişim kutusu metni"
+  },
+  "confirmResetAll": {
+    "message": "Tüm ayarlar ve istatistikler sıfırlansın mı? Bu işlem geri alınamaz.",
+    "description": "Onay iletişim kutusu metni"
+  }
+}

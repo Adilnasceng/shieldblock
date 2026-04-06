@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Shield background -->
+  <path d="M64 8L16 30v34c0 28 22 52 48 58 26-6 48-30 48-58V30L64 8Z" fill="#2563EB"/>
+  <!-- Highlight on shield -->
+  <path d="M64 8L16 30v34c0 28 22 52 48 58V8Z" fill="#3B82F6" opacity="0.4"/>
+  <!-- Checkmark / block X symbol -->
+  <path d="M44 64l14 14 28-28" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

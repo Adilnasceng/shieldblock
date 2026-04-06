@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShieldBlock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="dark">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z" fill="currentColor" opacity="0.9"/>
+        <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">ShieldBlock</span>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="btn-theme" title="Toggle theme" aria-label="Toggle theme">
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79Z" fill="currentColor"/></svg>
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" width="16" height="16" style="display:none"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-settings" title="Settings" aria-label="Open settings">
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 15a3 3 0 100-6 3 3 0 000 6Z" fill="currentColor"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Global Toggle -->
+  <section class="global-toggle-section">
+    <div class="toggle-row">
+      <span class="status-label" id="status-label" data-i18n="protectionActive">Protection Active</span>
+      <button class="toggle-switch" id="btn-global-toggle" aria-label="Global toggle" role="switch" aria-checked="true">
+        <span class="toggle-thumb"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Site Info -->
+  <section class="site-section">
+    <div class="site-row">
+      <div class="site-info">
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="site-domain" id="site-domain">Loading…</span>
+      </div>
+      <button class="site-toggle-btn" id="btn-site-toggle" aria-label="Toggle site whitelist">
+        <span id="site-toggle-label" data-i18n="pauseHere">Pause Here</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="stats-header">
+      <span class="stats-col-label" data-i18n="session">Session</span>
+      <span class="stats-col-label" data-i18n="allTime">All-Time</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat-icon ad-icon">
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg>
+      </div>
+      <span class="stat-name" data-i18n="adsBlocked">Ads Blocked</span>
+      <span class="stat-value session" id="stat-ads-session">0</span>
+      <span class="stat-value total" id="stat-ads-total">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat-icon tracker-icon">
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1" opacity="0.4"/></svg>
+      </div>
+      <span class="stat-name" data-i18n="trackers">Trackers</span>
+      <span class="stat-value session" id="stat-trackers-session">0</span>
+      <span class="stat-value total" id="stat-trackers-total">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat-icon cookie-icon">
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="9" r="1.5" fill="currentColor"/><circle cx="14" cy="8" r="1" fill="currentColor"/><circle cx="8" cy="14" r="1" fill="currentColor"/><circle cx="14" cy="14" r="1.5" fill="currentColor"/><circle cx="11" cy="12" r="1" fill="currentColor"/></svg>
+      </div>
+      <span class="stat-name" data-i18n="cookieBanners">Cookie Banners</span>
+      <span class="stat-value session" id="stat-cookies-session">0</span>
+      <span class="stat-value total" id="stat-cookies-total">0</span>
+    </div>
+  </section>
+
+  <!-- Category Toggles -->
+  <section class="categories-section">
+    <div class="categories-grid">
+      <label class="category-toggle" id="cat-ads">
+        <input type="checkbox" id="cat-ads-cb" checked>
+        <span class="cat-icon">🚫</span>
+        <span class="cat-name" data-i18n="catAds">Ads</span>
+      </label>
+      <label class="category-toggle" id="cat-trackers">
+        <input type="checkbox" id="cat-trackers-cb" checked>
+        <span class="cat-icon">👁</span>
+        <span class="cat-name" data-i18n="catTrackers">Trackers</span>
+      </label>
+      <label class="category-toggle" id="cat-cookies">
+        <input type="checkbox" id="cat-cookies-cb" checked>
+        <span class="cat-icon">🍪</span>
+        <span class="cat-name" data-i18n="catCookies">Cookies</span>
+      </label>
+      <label class="category-toggle" id="cat-antiblock">
+        <input type="checkbox" id="cat-antiblock-cb" checked>
+        <span class="cat-icon">🛡</span>
+        <span class="cat-name" data-i18n="catAntiAB">Anti-AB</span>
+      </label>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="popup-footer">
+    <button class="footer-link" id="btn-open-settings" data-i18n="settingsLink">Settings &amp; Custom Rules →</button>
+  </footer>
+
+  <script src="../assets/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
