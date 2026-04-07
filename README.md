@@ -215,7 +215,7 @@ To inspect the service worker:
 
 <div align="center">
 
-**MIT License © 2025 Adil NAS**
+**MIT License © 2026 Adil NAS**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Adilnasceng-181717?style=flat-square&logo=github)](https://github.com/Adilnasceng)
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-EC4899?style=flat-square)](https://github.com/sponsors/Adilnasceng)
